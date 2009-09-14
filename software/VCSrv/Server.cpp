@@ -8,6 +8,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <string.h>
+#include <cassert>
 
 #include "Server.hpp"
 #include "Exception.hpp"
@@ -109,7 +110,11 @@ Connection Server::waitForConnection(unsigned int timeout)
 sockaddr_in Server::resolveHost(const string &listenAddr, unsigned short port)
 {
   sockaddr_in  addrOut;
+  memset( &addrOut, 0, sizeof(addrOut) );   // just in case. this also disables
+                                            // warning on new gcc-4.3.4 about
+                                            // possibly uninitialized variable.
   const char  *addr=listenAddr.c_str();
+  assert(addr!=NULL);
 
   if( strcmp(addr, "*")==0 ) // all addresses?
     addrOut.sin_addr.s_addr=INADDR_ANY;
