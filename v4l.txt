@@ -1,2 +1,8 @@
+# reading list of devices
 v4lctl list
+
+# setting up composite as default input
 v4lctl setinput Composite1
+
+# test video input with mplayer
+mplayer -cache 128 -tv driver=v4l:width=640:height=480:outfmt=i420 -vc rawi420 -vo xv tv://

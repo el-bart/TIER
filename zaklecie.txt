@@ -1,8 +1,0 @@
-nie mam juz "notatek" z czasow pracy nad mgr, ale jak ostantio walczylem 
-z kamerka pod USB (tez V4L V2) to sprawdzalem czy dziala poprzez 
-nastepujace zaklecie:
-mplayer -cache 128 -tv driver=v4l:width=640:height=480:outfmt=i420 -vc 
-rawi420 -vo xv tv://
-pamietam, ze bylo tez jakies magiczne zaklecie zeby przelaczyc w tryb 
-odczytywania z zadanego wejscia (w moim przypadku domyslnie bylo to 
-s-video a nie chinch...), ale niestety tego juz tez nie mam spisanego... :/
