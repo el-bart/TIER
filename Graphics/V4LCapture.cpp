@@ -10,6 +10,7 @@
 //#include <unistd.h>
 #include <sys/ioctl.h>
 #include <linux/videodev2.h>
+#include <string.h>
 
 #include "V4LCapture.hpp"
 

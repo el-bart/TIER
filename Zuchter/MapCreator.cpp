@@ -2,6 +2,8 @@
  * MapCreator.cpp
  *
  */
+#include <string>
+#include <string.h>
 #include <errno.h>
 
 #include "MapCreator.hpp"

@@ -5,6 +5,7 @@
 #ifndef INCLUDE_GRAPHICS_RASTER_HPP_FILE
 #define INCLUDE_GRAPHICS_RASTER_HPP_FILE
 
+#include <memory>
 #include <vector>
 #include <boost/noncopyable.hpp>
 #include <assert.h>

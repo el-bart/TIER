@@ -24,7 +24,7 @@
 		)
 
 // zwraca sume kontrolna danego pakietu (zadanego jako ciag bajtow)
-static unsigned char cnt_chk_sum(int len, const char pck[])
+static unsigned char cnt_chk_sum(int len, const unsigned char pck[])
 {
  unsigned char sum;
  int           i;
@@ -51,7 +51,7 @@ static unsigned char cnt_chk_sum(int len, const char pck[])
 
 struct tier_pck_all tier_pck_mk_init(void)
 {
- char                pck_char[1+3];
+ unsigned char       pck_char[1+3];
  struct tier_pck_all pck;
 
  pck.type   =TIER_PCK_TYPE_INIT;
@@ -76,7 +76,7 @@ struct tier_pck_all tier_pck_mk_spdst(unsigned char track1_r,
                                       unsigned char track2_l,
                                       unsigned char track_dir)
 {
- char                pck_char[1+3];
+ unsigned char       pck_char[1+3];
  struct tier_pck_all pck;
 
  pck.type   =TIER_PCK_TYPE_SPDST;
@@ -112,7 +112,7 @@ struct tier_pck_all tier_pck_mk_spdrd(void)
 
 struct tier_pck_all tier_pck_mk_pp(void)
 {
- char                pck_char[1+3];
+ unsigned char       pck_char[1+3];
  struct tier_pck_all pck;
 
  pck.type   =TIER_PCK_TYPE_PP;
@@ -135,7 +135,7 @@ struct tier_pck_all tier_pck_mk_pp(void)
 
 struct tier_pck_all tier_pck_mk_ack(const struct tier_pck_all *req)
 {
- char                pck_char[1+1];
+ unsigned char       pck_char[1+1];
  struct tier_pck_all pck;
 
  assert(req!=NULL);
@@ -158,7 +158,7 @@ struct tier_pck_all tier_pck_mk_ack(const struct tier_pck_all *req)
 
 struct tier_pck_all tier_pck_mk_stop(void)
 {
- char                pck_char[1+3];
+ unsigned char       pck_char[1+3];
  struct tier_pck_all pck;
 
  pck.type   =TIER_PCK_TYPE_STOP;		// 0xf0

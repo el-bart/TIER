@@ -82,8 +82,8 @@ static int decode_st(struct pstate *ps, char st)
 // zwraca stan portu
 static int pstate_get(int port, struct pstate *ps)
 {
- char ctrl;
- char stat;
+ unsigned char ctrl;
+ unsigned char stat;
 
  // odczyt wlasciwy
  if( portio_read_control(port, &ctrl)!=0 )
@@ -115,7 +115,7 @@ static int pstate_get(int port, struct pstate *ps)
 // ustawia stan portu
 static int pstate_set(int port, struct pstate *ps)
 {
- char ctrl;
+ unsigned char ctrl;
 
  ctrl=ps->pc_rdy *TIER_PC_DATA_RDY +
       ps->pc_acc *TIER_PC_DATA_ACC +

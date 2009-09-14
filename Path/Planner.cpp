@@ -59,10 +59,12 @@ inline bool isInRange(const Point2DCont &p1, const Point2DCont &p2,
   const double P=sqrt( p*(p-a)*(p-b)*(p-c) );
 
   if(P<min)                     // this is not a tirangle?
+  {
     if( fabs( c-(a+b) )<min )   // point is inside?
       return true;
     else                        // point is outsise...
       return false;
+  }
 
   // how far is out point from line?
   const double h=P/(0.5*c);     // this goes from P=1/2*a*h comapred with

@@ -114,11 +114,11 @@ VectorImg::AutoVectorImg DeepthTransformer::transform(
     //
 
     // check if line is (at least in part) in range
-    if(pfX<x1 && ptX<x1 ||      // both X's too small?
-       x2<pfX && x2<ptX ||      // ... too large?
-       pfY<y1 && ptY<y1 ||      // both Y's too small?
-       y2<pfY && y2<ptY    )    // ... too large?
-      continue;                 // so skip'em all! :)
+    if( (pfX<x1 && ptX<x1) ||      // both X's too small?
+        (x2<pfX && x2<ptX) ||      // ... too large?
+        (pfY<y1 && ptY<y1) ||      // both Y's too small?
+        (y2<pfY && y2<ptY)    )    // ... too large?
+      continue;                    // so skip'em all! :)
 
     //
     // here we know that at least one point is in range!

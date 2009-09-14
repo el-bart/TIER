@@ -8,6 +8,7 @@
 #ifndef INCLUDE_NETWORK_CLIENT_HPP_FILE
 #define INCLUDE_NETWORK_CLIENT_HPP_FILE
 
+#include <memory>
 #include <assert.h>
 
 #include "Network/Connection.hpp"

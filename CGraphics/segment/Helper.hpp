@@ -25,7 +25,7 @@ namespace SegmentWrapper
 //
 // internal holder of array of edges ("auto_edges_array")
 //
-namespace
+namespace detail
 {
 
 struct ArrayHolder
@@ -43,7 +43,7 @@ struct ArrayHolder
   edge *_edges;
 };
 
-}; // unnamed namespace
+} // namespace detail
 
 
 //
@@ -79,7 +79,7 @@ struct Helper
   std::auto_ptr< image<float> > _g;
   std::auto_ptr< image<float> > _b;
 
-  ArrayHolder _edgesArray;
+  detail::ArrayHolder _edgesArray;
 }; // class Helper
 
 

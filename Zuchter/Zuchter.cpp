@@ -5,6 +5,7 @@
 #include <iostream>
 #include <signal.h>
 #include <errno.h>
+#include <string.h>
 
 #include "CommProto/ProtoLocal.hpp"
 #include "TIERctl.hpp"
@@ -130,7 +131,7 @@ int main(const int argc, const char * const * const argv)
     // time to sleep between reconnections trials (in [us])
     const unsigned int reconnectionsDelay=250*1000; // 0.25[s]
     // server address
-    const Address addr("hell", 6669);
+    const Address addr("localhost", 6669);
 
     fflush(NULL);
     // parameters of segmentation of image

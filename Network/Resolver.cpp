@@ -4,6 +4,7 @@
  */
 
 #include <string>
+#include <string.h>
 #include <netdb.h>
 #include <sys/socket.h>
 #include <netinet/in.h>

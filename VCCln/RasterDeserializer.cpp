@@ -2,8 +2,9 @@
  * RasterDeserializer.cpp
  *
  */
-#include <assert.h>
+#include <string.h>
 #include <netinet/in.h>
+#include <assert.h>
 
 #include "RasterDeserializer.hpp"
 #include "Exception.hpp"
