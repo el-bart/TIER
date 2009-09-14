@@ -1,0 +1,6 @@
+#!/bin/bash -v
+./cfg_v4l || exit $?
+mplayer -cache 128 -tv driver=v4l:width=640:height=480:outfmt=i420 -vc rawi420 -vo xv tv:// &
+sleep 5
+pkill mplayer
+exit $?

@@ -1,0 +1,5 @@
+#!/bin/bash -v
+rmmod saa7134 || exit $?
+modprobe saa7134 card=8 || exit $?
+v4lctl setinput Composite1 || exit $?
+v4lctl list || exit $?
