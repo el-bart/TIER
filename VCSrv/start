@@ -1,0 +1,5 @@
+#!/bin/bash -v
+
+./vc_srv 10.6.6.6 6669 /dev/video 130 120
+exit $?
+
