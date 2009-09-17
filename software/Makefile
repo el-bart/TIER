@@ -48,7 +48,7 @@ make_common:
 	$(MAKE) -C Zuchter/ $(TARGET)
 	$(MAKE) -C Path/ $(TARGET)
 	$(MAKE) -C CommProto/ $(TARGET)
-	ctags -R
+	#ctags -R
 
 
 clean:

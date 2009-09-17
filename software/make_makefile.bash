@@ -68,7 +68,7 @@ do
   echo -n "$d/ "      >> $mf
   echo    '$(TARGET)' >> $mf
 done
-echo -n '	ctags -R
+echo -n '	#ctags -R
 
 
 clean:

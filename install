@@ -1,0 +1,10 @@
+#!/bin/bash
+apt-get update || exit $?
+apt-get install -y xawtv \
+                   bzr \
+                   gcc \
+                   g++ \
+                   make \
+                   libboost-dev \
+                   libgtk2.0-dev \
+                   || exit $?
