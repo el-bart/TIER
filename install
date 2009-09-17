@@ -1,0 +1,3 @@
+#!/bin/bash
+apt-get update || exit $?
+apt-get install -y xawtv bzr || exit $?
