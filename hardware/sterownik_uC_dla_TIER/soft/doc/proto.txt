@@ -1,0 +1,103 @@
+
+opis protokolu komunikacji
+--------------------------
+
+bajt[0]  =cmd
+bajt[i]  =arg[i]
+bajt[i+1]=sum
+
+cmd: 7 6 5 4  3 2 1 0
+     |  ct |  | ~ct |
+
+      ct = Command Type
+     ~ct = Negated Command Type field
+
+sum = control sum of packet. wylicane ze wzoru:
+
+        0 + for_each_arg(arg+1)
+
+      "okrecenie" sie licznika jest ignorowane
+
+
+
+typy pakietow
+-------------
+
+ct  bin  hex nazwa rodzaj
+ 0 0000 0x00 init  inicjalizacja
+ 1 0001 0x01 spdst ustawienie predkosci
+ 2 0010 0x02 spdrd odczyt ustawien predkosci
+ 3 0011 0x03 pp    ping-pong
+ 4 0100 0x04 ack   potwierdzenie odbrania pakietu 1-way
+ 5 0101 0x05 -
+ 6 0110 0x06 -
+ 7 0111 0x07 -
+ 8 1000 0x08 -
+ 9 1001 0x09 -
+10 1010 0x0a -
+11 1011 0x0b -
+12 1100 0x0c -
+13 1101 0x0d -
+14 1110 0x0e -
+15 1111 0x0f stop  resetuje sterownik
+
+
+
+opis poszczegolnych pakietow
+----------------------------
+
+init
+++++
+rozpoczecie komunikacji - zawsze pierwszy z wyslanych
+pakietow.
+nastepne 3 bajty to kolejno: 0x95 0xe2 0x12.
+caly pakiet ma wiec postac:
+0x00 0x95 0xe2 0x12 0x8D
+
+spdst
++++++
+ustawienie predkosci i kierunkow dla obu gasiennic.
+posiada 3 argumenty:
+1: nastaw gasiennicy 1
+2: nastaw gasiennicy 2
+3: 4 najmlodsze bity to nastawy gasiennic:
+   b0 - g1 f
+   b1 - g1 b
+   b2 - g2 f
+   b3 - g2 b
+
+spdrd
++++++
+rozkaz odczytu ustawien gasiennic. sterownik odpowiada
+pakietem typu spdst, wypelninym odpowiednimi danymi.
+nie posiada argumentow (dowojne 3 bajty).
+rozkaz NIE jest implementowany!
+
+pp
+++
+komputer wysyla do sterownika taki pakiet wraz z pewna
+przypadkowa liczba. zadaniem sterownika jest odpowiedziec
+na ten pakiet takim samym pakietem z liczba o 1 wieksza.
+pakiet posiada nastepujace argument:
+1: liczba1 (dowolna)
+2: liczba2 (dowolna)
+3: liczba3 (dowolna)
+
+ack
++++
+pakiet potwierdzajacy odebranie pakietu 1-kierunkowego
+(takiego, ktory z zalozenia nie ma potwierdzenia).
+pakiet posiada 1 argument:
+1: suma kontrolna otrzymanego pakietu
+
+
+stop
+++++
+resetuje (programowo) uklad sterownika, przywracajac
+ustawienia domyslne.
+posiada 2 argumenty:
+1: pierwszy bajt +0x25
+2: drugi bajt +0x59
+sumarycznie caly pakiet ma stala postac:
+ 0xF0 0x15 0x6E 0x76 0xED
+
