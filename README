@@ -1,6 +1,4 @@
-1) run 'install' to install tools required for runtime and compilation of software
-2) run 'cfg_v4l' to configure video card (see code in case of problems)
-3) run 'video' to test if card wroks (5s mplayer window - camera image should be visible)
-4) build sources with 'cd software && make'
-5) run 'start' to start robot's software and debugging windows, showing what's going on in the system (ctrl+C breaks processing)
-6) run 'reset' to kill all processes and stop the robot
+author:  bartek szurgot
+www:     http://baszerr.org
+license: revised BSD
+version: 0.1.3
