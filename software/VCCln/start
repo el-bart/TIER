@@ -1,0 +1,5 @@
+#!/bin/bash -v
+
+./TEST.out localhost 6669
+exit $?
+

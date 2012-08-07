@@ -1,0 +1,7 @@
+this is *** NOT *** oryginal Path library, used for
+finding routes thorught terrain!
+it has been modyfied to relfex MUCH simpler operations
+performed by robot - moving in terrain having (almost)
+only local information on what is arround (from a current
+perspective). no long-term object identyfication and
+tracking is performed.

@@ -1,0 +1,7 @@
+#!/bin/bash -v
+( cd software/VCSrv    && ./start      ) &
+sleep 2
+( cd software/DebugWin && ./start.bash ) &
+sleep 1
+( cd software/Zuchter  && ./zuchter    )
+exit $?

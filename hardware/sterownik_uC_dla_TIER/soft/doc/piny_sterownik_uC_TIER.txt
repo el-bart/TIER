@@ -1,0 +1,22 @@
+podpiecie portow sterownika uC TIER:
+
+P0:
+P0.0 sterowanie silnikiem 0
+P0.1 ...
+P0.2 sterowanie silnikiem 1
+P0.3 ...
+P0.4 led - power on
+P0.5 led - data send/recv
+P0.6 led - unused
+P0.7 led - unused
+
+P1:
+uniwersjalne 8-bit I/O
+
+P2:
+uniwersjalne 8-bit I/O
+
+P3:
+P0.0 rs232 - RX
+P0.1 rs232 - TX
+P0.2-P0.7 univ. 6-bit I/O

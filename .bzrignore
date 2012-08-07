@@ -1,0 +1,6 @@
+tags
+software/DebugWin/debug_win
+software/VCSrv/vc_srv
+software/Zuchter/zuchter
+*.out
+software/lpt2rs232/soft/pc_driver_srv/tier_io_srv

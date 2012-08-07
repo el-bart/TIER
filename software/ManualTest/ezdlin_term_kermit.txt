@@ -1,0 +1,3 @@
+set line /dev/ttyS0
+set carrier-watch off
+set speed 9600  
